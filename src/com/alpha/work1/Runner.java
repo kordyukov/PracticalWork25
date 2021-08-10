@@ -24,60 +24,30 @@ public class Runner {
     }
 
     public void WriteNextDay(){
-        DaysOfWeek daysOfWeek;
-        System.out.println("Введие один из SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY ");
+
+        System.out.println("Введие один из дней SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY ");
         Scanner scanner = new Scanner(System.in);
         String day = scanner.nextLine();
-        switch (day){
-            case "SATURDAY":
-                 daysOfWeek = DaysOfWeek.SATURDAY;
-                daysOfWeek.nextDay();
-                System.out.println("Следующий день недели: "+ DaysOfWeek.values()[daysOfWeek.getDay()]);
-              break;
+        if (day.equals("SUNDAY")||day.equals("MONDAY")||
+        day.equals("TUESDAY")||day.equals("WEDNESDAY")||
+        day.equals("THURSDAY")||day.equals("FRIDAY")||day.equals("SATURDAY"))
+        {
+            DaysOfWeek daysOfWeek;
+            daysOfWeek = DaysOfWeek.valueOf(day);
+            daysOfWeek.nextDay();
+            System.out.println(DaysOfWeek.values()[daysOfWeek.getDay()]);
+        } else {
+            System.out.println("Неверный ввод! Введие один из дней " +
+                    "SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY ");
+            WriteNextDay();
+        }
 
-        case "SUNDAY":
-         daysOfWeek = DaysOfWeek.SUNDAY;
-        daysOfWeek.nextDay();
-        System.out.println("Следующий день недели: "+DaysOfWeek.values()[daysOfWeek.getDay()]);
-        break;
 
-        case "MONDAY":
-         daysOfWeek = DaysOfWeek.MONDAY;
-        daysOfWeek.nextDay();
-        System.out.println("Следующий день недели: "+DaysOfWeek.values()[daysOfWeek.getDay()]);
-        break;
 
-        case "TUESDAY":
-         daysOfWeek = DaysOfWeek.TUESDAY;
-        daysOfWeek.nextDay();
-        System.out.println("Следующий день недели: "+DaysOfWeek.values()[daysOfWeek.getDay()]);
-        break;
-
-        case "WEDNESDAY":
-         daysOfWeek = DaysOfWeek.WEDNESDAY;
-        daysOfWeek.nextDay();
-        System.out.println("Следующий день недели: "+DaysOfWeek.values()[daysOfWeek.getDay()]);
-        break;
-
-        case "THURSDAY":
-         daysOfWeek = DaysOfWeek.THURSDAY;
-        daysOfWeek.nextDay();
-        System.out.println("Следующий день недели: "+DaysOfWeek.values()[daysOfWeek.getDay()]);
-        break;
-
-        case "FRIDAY":
-         daysOfWeek = DaysOfWeek.FRIDAY;
-        daysOfWeek.nextDay();
-        System.out.println("Следующий день недели: "+DaysOfWeek.values()[daysOfWeek.getDay()]);
-        break;
-            default:
-                System.out.println("Некоретно введен день! Введие один из  " +
-                        "SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY");
-                WriteNextDay();
         }
 
     }
 
-    }
+
 
 

@@ -8,11 +8,11 @@ public enum DaysOfWeek {
      DaysOfWeek(int i) {
       this.day = i;
     }
-    void nextDay(){
+    int nextDay(){
          if (this.day==6) {
-             this.day-= 6;
+             return this.day-= 6;
          }else {
-             this.day++;
+            return this.day++;
          }
     }
 
