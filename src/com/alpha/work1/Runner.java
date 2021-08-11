@@ -37,8 +37,7 @@ public class Runner {
             daysOfWeek.nextDay();
             System.out.println(DaysOfWeek.values()[daysOfWeek.getDay()]);
         } else {
-            System.out.println("Неверный ввод! Введие один из дней " +
-                    "SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY ");
+            System.out.println("Неверный ввод! ");
             WriteNextDay();
         }
 
