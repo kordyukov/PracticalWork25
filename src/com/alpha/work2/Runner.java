@@ -2,26 +2,34 @@ package com.alpha.work2;
 
 public class Runner {
     public void run(){
-    PrintCads(NewCards());
+    printCads(newCards());
 
     }
 
-    public Card[] NewCards(){
-         Card[]cards = new Card[52];
+    public Card[] newCards(){
+         Card[] cards = new Card[52];
 
-         for (int i = 0; i<cards.length; i++){
-             cards[i] = new Card (Rank.values()[0 + (int) (Math.random() * Rank.values().length)],
-                            Suit.values()[0 + (int) (Math.random() * Suit.values().length)]);
-         }
+//         for (int i = 0; i<cards.length; i++){
+//             cards[i] = new Card (Rank.values()[0 + (int) (Math.random() * Rank.values().length)],
+//                            Suit.values()[0 + (int) (Math.random() * Suit.values().length)]);
+//         }
+        int i = 0;
+        for (Rank rank: Rank.values()) {
+            for (Suit suit: Suit.values()) {
+                cards[i] = new Card(rank,suit);
+                i++;
+            }
+        }
+
          return cards;
     }
 
-    public void PrintCads(Card[] cards){
-        int i = 1;
+    public void printCads(Card[] cards){
+
         for (Card write:
              cards) {
-            System.out.println(i + " - " + write);
-            i++;
+            System.out.println(write);
+
         }
     }
 }
