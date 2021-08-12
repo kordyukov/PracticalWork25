@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class TrainSchedule {
     private Train[] trains;
 
-    public TrainSchedule(int quantityTains){
-        this.trains = new Train[quantityTains];
+    public void TrainSchedule(int quantityTains){
+        trains = new Train[quantityTains];
     }
 
     public TrainSchedule() {
@@ -15,11 +15,9 @@ public class TrainSchedule {
 
     public Train[] addTrain(){
         Train train = new Train();
-        Train[] trains = null;
-
         System.out.println("Введите количесво поездов: ");
         int quantityTains = new Scanner(System.in).nextInt();
-        new TrainSchedule(quantityTains);
+        TrainSchedule(quantityTains);
 
         for (int i = 0;i<quantityTains;i++) {
             System.out.println("Введите данные поезда: \n" + "Введие номер поезда:");
@@ -33,7 +31,8 @@ public class TrainSchedule {
             System.out.println("Введите время оправления:");
             train.setTimeDispatch(new Scanner(System.in).nextLine());
 
-            this.trains = new Train[]{train};
+
+            trains[i] = train;
         }
         return this.trains;
     }
