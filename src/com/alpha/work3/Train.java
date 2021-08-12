@@ -10,7 +10,7 @@ public class Train {
     private  String stationArrival;
     private String timeDispatch;
     private String timeArrival;
-    DaysOfWeek[] daysOfWeeks;
+    DaysOfWeek[] daysOfWeeks = DaysOfWeek.values();
 
     public int getNumber() {
         return number;
