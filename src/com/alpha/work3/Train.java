@@ -63,9 +63,7 @@ public class Train {
     public Train(int number) {
         this.number = number;
     }
-    public Train(){
 
-    }
 
     @Override
     public String toString() {
