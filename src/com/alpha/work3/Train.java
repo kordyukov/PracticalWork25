@@ -1,8 +1,9 @@
 package com.alpha.work3;
 
-import com.alpha.work1.DaysOfWeek;
+import com.alpha.work3.DaysOfWeek;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Train {
     private int number;
@@ -10,7 +11,7 @@ public class Train {
     private  String stationArrival;
     private String timeDispatch;
     private String timeArrival;
-    DaysOfWeek[] daysOfWeeks = DaysOfWeek.values();
+    DaysOfWeek[] daysOfWeeks;
 
     public int getNumber() {
         return number;
@@ -65,6 +66,8 @@ public class Train {
     }
 
 
+
+
     @Override
     public String toString() {
         return "Train{" +
@@ -76,4 +79,6 @@ public class Train {
                 ", daysOfWeeks=" + Arrays.toString(daysOfWeeks) +
                 '}';
     }
+
+
 }

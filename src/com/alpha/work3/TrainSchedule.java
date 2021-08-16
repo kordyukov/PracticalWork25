@@ -2,6 +2,7 @@ package com.alpha.work3;
 
 import java.util.Scanner;
 
+
 public class TrainSchedule {
     private Train[] trains;
     private int countTrain = 0;
@@ -30,8 +31,13 @@ public class TrainSchedule {
             train.setStationDispatch(new Scanner(System.in).next());
             System.out.println("Введите время прибытия:");
             train.setTimeArrival(new Scanner(System.in).next());
-            System.out.println("Введите время оправления:");
+            System.out.println("Введите время отправления:");
             train.setTimeDispatch(new Scanner(System.in).next());
+
+            System.out.println("Введите дни отправления через запятую :");
+            train.setDaysOfWeeks(enterDaysOfWeeks(new Scanner(System.in).nextLine()));
+
+
             trains[i] = train;
         }
 
@@ -45,9 +51,27 @@ public class TrainSchedule {
 
     }
 
+    public DaysOfWeek[] enterDaysOfWeeks(String str){
+        String[]strings = str.split(", " );
+        DaysOfWeek[] daysOfWeeks = new DaysOfWeek[strings.length];
+         for (int i = 0;i<daysOfWeeks.length;i++){
+             daysOfWeeks[i] = DaysOfWeek.valueOf(strings[i]);
+         }
+         return daysOfWeeks;
+    }
+
     public Train[] getTrains() {
         return trains;
     }
+
+//     public Train[] searchTrains(Train[] trains){
+//        System.out.println("Введите станцию назначения: ");
+//        String StationArrival = new Scanner(System.in).next();
+//        System.out.println("введите день недели: ");
+//
+//    }
+
+
 
 
 }
