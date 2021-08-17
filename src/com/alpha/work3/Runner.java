@@ -18,7 +18,7 @@ public class Runner {
             createTrains();
         }
         TrainSchedule trainSchedule = new TrainSchedule(Integer.parseInt(quantityTains));
-        trainSchedule.printTrains(trainSchedule.addTrain());
+        trainSchedule.printTrains(trainSchedule.searchTrains(trainSchedule.addTrain()));
 
 
     }

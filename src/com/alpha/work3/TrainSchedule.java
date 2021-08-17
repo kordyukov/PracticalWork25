@@ -44,8 +44,8 @@ public class TrainSchedule {
         return trains;
 
     }
-    public void printTrains(Train[] trains){
-        for (Train t: this.trains) {
+    public static void printTrains(Train[] trains){
+        for (Train t:  trains) {
             System.out.println(t);
         }
 
@@ -81,12 +81,21 @@ public class TrainSchedule {
         return daysOfWeeks;
     }
 
-//     public Train[] searchTrains(Train[] trains){
-//        System.out.println("Введите станцию назначения: ");
-//        String StationArrival = new Scanner(System.in).next();
-//        System.out.println("введите день недели: ");
-//
-//    }
+     public Train[] searchTrains(Train[] trains){
+       Train[] train = new Train[trains.length];
+       int count = 0;
+       System.out.println("Введите станцию назначения: ");
+        String stationArrival = new Scanner(System.in).next();
+         for (Train t: trains) {
+          if (t.getStationArrival().equals(stationArrival)) {
+              train[count] = t;
+              count++;
+          }
+         }
+         return train;
+       // System.out.println("введите день недели: ");
+
+    }
 
 
 
