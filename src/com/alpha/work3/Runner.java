@@ -10,12 +10,23 @@ public class Runner {
 
     }
     public void createTrains() {
-        System.out.println("Введите количесво поездов: ");
-        int quantityTains = new Scanner(System.in).nextInt();
-        TrainSchedule trainSchedule = new TrainSchedule(quantityTains);
+        System.out.println("Введите количесво поездов (целое число - не отрицаельное значение): ");
+        String quantityTains = new Scanner(System.in).next();
+        if(validationNumber(quantityTains)){
+            System.out.println("ok");
+        }else{
+            createTrains();
+        }
+        TrainSchedule trainSchedule = new TrainSchedule(Integer.parseInt(quantityTains));
         trainSchedule.printTrains(trainSchedule.addTrain());
 
 
     }
+
+   public static boolean validationNumber(String str){
+       return str.matches("[+]?\\d*(\\d+)?");
+   }
+
+
 
 }
