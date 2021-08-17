@@ -67,7 +67,7 @@ public class TrainSchedule {
     public String validateNumberTrain(String numberTrain){
         while (!Runner.validationNumber(numberTrain)){
             System.out.println("Введите данные поезда: \n" + "Введие номер поезда - целое, не отрицательное  число:");
-            numberTrain = new Scanner(System.in).next();
+            numberTrain = new Scanner(System.in).nextLine();
         }
         return numberTrain;
     }
@@ -77,27 +77,10 @@ public class TrainSchedule {
                 "например SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY" +
                 ":");
         daysOfWeeks = new Scanner(System.in).nextLine();
-        String[]dw = daysOfWeeks.split(",");
-        for (int i = 0;i < dw.length; i++){
-            if(dw[i].toUpperCase().equals("SUNDAY") ||
-                    dw[i].toUpperCase().equals("MONDAY") ||
-                    dw[i].toUpperCase().equals("TUESDAY") ||
-                    dw[i].toUpperCase().equals("WEDNESDAY") ||
-                    dw[i].toUpperCase().equals("THURSDAY") ||
-                    dw[i].toUpperCase().equals("FRIDAY") ||
-                    dw[i].toUpperCase().equals("SATURDAY"))
-            {
-                System.out.println("ok");
-                break;
-            } else {
-                System.out.println("Введите хотя б один день в формате " +
-                        "SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY");
-                validateDaysOfWeeks();
-            }
 
-        }
         return daysOfWeeks;
     }
+
 //     public Train[] searchTrains(Train[] trains){
 //        System.out.println("Введите станцию назначения: ");
 //        String StationArrival = new Scanner(System.in).next();
