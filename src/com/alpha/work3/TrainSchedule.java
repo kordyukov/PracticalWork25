@@ -1,5 +1,6 @@
 package com.alpha.work3;
 
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -83,15 +84,24 @@ public class TrainSchedule {
 
      public Train[] searchTrains(Train[] trains){
        Train[] train = new Train[trains.length];
+
        int count = 0;
        System.out.println("Введите станцию назначения: ");
         String stationArrival = new Scanner(System.in).next();
+         System.out.println("В какой день ехать? SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY ");
+         String day = new Scanner(System.in).next();
+
          for (Train t: trains) {
-          if (t.getStationArrival().equals(stationArrival)) {
+             System.out.println(t.getDaysOfWeeks()[count]);
+          if ((t.getStationArrival().equals(stationArrival))||(t.getDaysOfWeeks()[count].equals(day))) {
               train[count] = t;
+
               count++;
+
           }
+
          }
+
          return train;
        // System.out.println("введите день недели: ");
 

@@ -10,6 +10,7 @@ public class Runner {
 
     }
     public void createTrains() {
+
         System.out.println("Введите количесво поездов (целое число - не отрицаельное значение): ");
         String quantityTains = new Scanner(System.in).next();
         if(validationNumber(quantityTains)){
@@ -19,6 +20,7 @@ public class Runner {
         }
         TrainSchedule trainSchedule = new TrainSchedule(Integer.parseInt(quantityTains));
         trainSchedule.printTrains(trainSchedule.searchTrains(trainSchedule.addTrain()));
+
 
 
     }
